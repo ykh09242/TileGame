@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="소스 파일">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="헤더 파일">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Pattern">
+      <UniqueIdentifier>{b30646d1-1343-4c54-b5b1-1c1f4b8dd730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{3e0cc837-92c1-4a3a-b1f2-70681241f884}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern\Singleton">
+      <UniqueIdentifier>{bb95873d-f56a-4686-9e91-36e8df658ca0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{215f23c8-1d1c-47fb-bfba-2796bd2d18e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Scene">
+      <UniqueIdentifier>{f6ee18f4-eaa9-4569-8bab-23e6184523ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Core">
+      <UniqueIdentifier>{f9814472-1d9b-4836-bb89-5b3f4f61a9c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Core\BaseScene">
+      <UniqueIdentifier>{622fcee3-d3a0-4e71-8419-3235e3f257e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Scene\Title">
+      <UniqueIdentifier>{dc52411b-c827-4221-94c7-e8355c5ec31b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataStructure">
+      <UniqueIdentifier>{bf2195f7-a28c-4854-9252-38f1566e2ed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataStructure\Vector">
+      <UniqueIdentifier>{5d269d15-cfdf-46b6-a344-d01469983d41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{bc041715-3a0a-4ba4-b753-6cf442b888eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\SceneManager">
+      <UniqueIdentifier>{196ef9ce-dd6a-437e-b631-ed45f1a6ec11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager\InputManager">
+      <UniqueIdentifier>{dd77ae1f-96b1-47b0-9bba-0394f153382d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Pattern\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="System.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>Scene\Core\BaseScene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Manager\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>Scene\Scene\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>DataStructure\Vector</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="TileGame.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="System.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Manager\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>Scene\Scene\Title</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
