@@ -2,51 +2,46 @@
 #include "Title.h"
 
 
-Title::Title()
-	: x(0), y(0)
+void Title::Activate()
 {
-}
-
-
-Title::~Title()
-{
+	x = 0;
+	y = 0;
 }
 
 void Title::Update()
 {
-	if (GetAsyncKeyState(VK_DOWN) && y + 2 <= g_system->srHeight)
+	if (g_input->OnceKeyUp(VK_ESCAPE))
 	{
-		y++;
+		g_system->exit = true;
 	}
-	if (GetAsyncKeyState(VK_RIGHT) && x + 5 <= g_system->srWidth)
+
+	if (g_input->StayKeyDown(VK_RIGHT) && x < g_system->srWidth - 3)
 	{
 		x++;
 	}
-	if (GetAsyncKeyState(VK_UP) && y - 1 >= 0)
-	{
-		y--;
-	}
-	
-	if (GetAsyncKeyState(VK_LEFT) && x - 1 >= 0)
+	if (g_input->StayKeyDown(VK_LEFT) && x > 0)
 	{
 		x--;
 	}
-
-
-	if (GetAsyncKeyState(VK_ESCAPE))
+	if (g_input->StayKeyDown(VK_UP) && y > 0)
 	{
-		g_system->exit = true;
+		y--;
+	}
+	if (g_input->StayKeyDown(VK_DOWN) && y <= g_system->srHeight - 3)
+	{
+		y++;
+	}
+
+	if (g_input->OnceKeyDown(VK_NUMPAD1))
+	{
+		g_scene->Activate(sInGame);
 	}
 }
 
 void Title::Render()
 {
-	g_system->WriteBuffer(x, y, "완료");
-}
-
-void Title::Activate()
-{
-	//g_system->SetGameOver(true);
+	//g_system->WriteBuffer(g_system->srWidth / 2 - 5, g_system->srHeight / 2 - 5, "게임 시작");
+	g_system->WriteBuffer(x, y, "ㅇ");
 }
 
 void Title::Deactivate()

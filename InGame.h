@@ -1,12 +1,9 @@
 #pragma once
 #include "BaseScene.h"
 
-class Title
-	: public BaseScene
+class InGame :
+	public BaseScene
 {
-private:
-	int x, y;
-
 public:
 	virtual void Activate() override;
 	virtual void Update() override;

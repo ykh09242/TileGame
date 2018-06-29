@@ -48,6 +48,9 @@
     <Filter Include="Manager\InputManager">
       <UniqueIdentifier>{dd77ae1f-96b1-47b0-9bba-0394f153382d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\Scene\InGame">
+      <UniqueIdentifier>{44240971-efc4-42ec-bbbb-73048e15f359}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -74,6 +77,12 @@
     <ClInclude Include="Vector.h">
       <Filter>DataStructure\Vector</Filter>
     </ClInclude>
+    <ClInclude Include="InputManager.h">
+      <Filter>Manager\InputManager</Filter>
+    </ClInclude>
+    <ClInclude Include="InGame.h">
+      <Filter>Scene\Scene\InGame</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -90,6 +99,12 @@
     </ClCompile>
     <ClCompile Include="Title.cpp">
       <Filter>Scene\Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="InputManager.cpp">
+      <Filter>Manager\InputManager</Filter>
+    </ClCompile>
+    <ClCompile Include="InGame.cpp">
+      <Filter>Scene\Scene\InGame</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

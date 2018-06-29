@@ -11,7 +11,8 @@ System::System()
 void System::Init()
 {
 	CreateBuffer(80, 30);
-	g_scene->AddScene(sTitle, new Title());
+	g_scene->AddScene(sTitle, new Title);
+	g_scene->AddScene(sInGame, new InGame);
 	g_scene->Activate(sTitle);
 }
 
@@ -30,6 +31,7 @@ void System::Render()
 void System::Quit()
 {
 	DeleteBuffer();
+	g_input->PurgeInstance();
 	g_scene->PurgeInstance();
 	g_system->PurgeInstance();
 }

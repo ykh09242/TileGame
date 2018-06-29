@@ -1,4 +1,5 @@
 #pragma once
+#include "Title.h"
 
 class Title;
 
