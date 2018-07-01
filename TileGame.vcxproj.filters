@@ -18,27 +18,6 @@
     <Filter Include="Pattern\Singleton">
       <UniqueIdentifier>{bb95873d-f56a-4686-9e91-36e8df658ca0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene">
-      <UniqueIdentifier>{215f23c8-1d1c-47fb-bfba-2796bd2d18e7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Scene">
-      <UniqueIdentifier>{f6ee18f4-eaa9-4569-8bab-23e6184523ce}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Core">
-      <UniqueIdentifier>{f9814472-1d9b-4836-bb89-5b3f4f61a9c8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Core\BaseScene">
-      <UniqueIdentifier>{622fcee3-d3a0-4e71-8419-3235e3f257e9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Scene\Scene\Title">
-      <UniqueIdentifier>{dc52411b-c827-4221-94c7-e8355c5ec31b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DataStructure">
-      <UniqueIdentifier>{bf2195f7-a28c-4854-9252-38f1566e2ed3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="DataStructure\Vector">
-      <UniqueIdentifier>{5d269d15-cfdf-46b6-a344-d01469983d41}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Manager">
       <UniqueIdentifier>{bc041715-3a0a-4ba4-b753-6cf442b888eb}</UniqueIdentifier>
     </Filter>
@@ -48,7 +27,28 @@
     <Filter Include="Manager\InputManager">
       <UniqueIdentifier>{dd77ae1f-96b1-47b0-9bba-0394f153382d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scene\Scene\InGame">
+    <Filter Include="Containers">
+      <UniqueIdentifier>{bf2195f7-a28c-4854-9252-38f1566e2ed3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Containers\Vector">
+      <UniqueIdentifier>{5d269d15-cfdf-46b6-a344-d01469983d41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character">
+      <UniqueIdentifier>{793c7b9e-252b-4505-881f-5b080853db98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Enemy">
+      <UniqueIdentifier>{4f33c280-816d-4f8a-8bb0-9f22bc33e3a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Player">
+      <UniqueIdentifier>{5546a759-ded4-4e53-a7d9-f4e904cb009d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{f6ee18f4-eaa9-4569-8bab-23e6184523ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\Title">
+      <UniqueIdentifier>{dc52411b-c827-4221-94c7-e8355c5ec31b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\InGame">
       <UniqueIdentifier>{44240971-efc4-42ec-bbbb-73048e15f359}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -65,23 +65,32 @@
     <ClInclude Include="System.h">
       <Filter>System</Filter>
     </ClInclude>
-    <ClInclude Include="BaseScene.h">
-      <Filter>Scene\Core\BaseScene</Filter>
-    </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Manager\SceneManager</Filter>
     </ClInclude>
     <ClInclude Include="Title.h">
-      <Filter>Scene\Scene\Title</Filter>
+      <Filter>Scene\Title</Filter>
     </ClInclude>
     <ClInclude Include="Vector.h">
-      <Filter>DataStructure\Vector</Filter>
+      <Filter>Containers\Vector</Filter>
     </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>Manager\InputManager</Filter>
     </ClInclude>
     <ClInclude Include="InGame.h">
-      <Filter>Scene\Scene\InGame</Filter>
+      <Filter>Scene\InGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCharacter.h">
+      <Filter>Character</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseScene.h">
+      <Filter>Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -98,13 +107,19 @@
       <Filter>Manager\SceneManager</Filter>
     </ClCompile>
     <ClCompile Include="Title.cpp">
-      <Filter>Scene\Scene\Title</Filter>
+      <Filter>Scene\Title</Filter>
     </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>Manager\InputManager</Filter>
     </ClCompile>
     <ClCompile Include="InGame.cpp">
-      <Filter>Scene\Scene\InGame</Filter>
+      <Filter>Scene\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Character\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Character\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

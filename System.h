@@ -1,7 +1,4 @@
 #pragma once
-#include "Title.h"
-
-class Title;
 
 class System
 	: public Singleton<System>
@@ -24,7 +21,7 @@ public:
 	void Update();
 	void Render();
 	void Quit();
-	void WriteBuffer(short x, short y, const char str[]);
+	void WriteText(short x, short y, const char str[]);
 
 private:
 	void CreateBuffer(short width, short height);

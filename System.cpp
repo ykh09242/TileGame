@@ -65,12 +65,12 @@ void System::CreateBuffer(short width, short height)
 	SetConsoleCursorInfo(hBuffer[1], &cci);
 }
 
-void System::WriteBuffer(short x, short y, const char str[])
+void System::WriteText(short x, short y, const char str[])
 {
 	COORD CursorPosition = { x, y };
 	DWORD dw;
 	SetConsoleCursorPosition(hBuffer[nScreenIndex], CursorPosition);
-	WriteFile(hBuffer[nScreenIndex], str, strlen(str), &dw, NULL);
+	WriteFile(hBuffer[nScreenIndex], str, (DWORD)strlen(str), &dw, NULL);
 }
 
 void System::FilpBuffer()

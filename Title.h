@@ -4,9 +4,6 @@
 class Title
 	: public BaseScene
 {
-private:
-	int x, y;
-
 public:
 	virtual void Activate() override;
 	virtual void Update() override;
