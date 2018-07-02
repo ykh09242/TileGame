@@ -33,15 +33,6 @@
     <Filter Include="Containers\Vector">
       <UniqueIdentifier>{5d269d15-cfdf-46b6-a344-d01469983d41}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Character">
-      <UniqueIdentifier>{793c7b9e-252b-4505-881f-5b080853db98}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Character\Enemy">
-      <UniqueIdentifier>{4f33c280-816d-4f8a-8bb0-9f22bc33e3a4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Character\Player">
-      <UniqueIdentifier>{5546a759-ded4-4e53-a7d9-f4e904cb009d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{f6ee18f4-eaa9-4569-8bab-23e6184523ce}</UniqueIdentifier>
     </Filter>
@@ -80,15 +71,6 @@
     <ClInclude Include="InGame.h">
       <Filter>Scene\InGame</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Character\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Character\Enemy</Filter>
-    </ClInclude>
-    <ClInclude Include="BaseCharacter.h">
-      <Filter>Character</Filter>
-    </ClInclude>
     <ClInclude Include="BaseScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
@@ -114,12 +96,6 @@
     </ClCompile>
     <ClCompile Include="InGame.cpp">
       <Filter>Scene\InGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Character\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Character\Enemy</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
