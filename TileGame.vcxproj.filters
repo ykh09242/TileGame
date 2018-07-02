@@ -26,9 +26,6 @@
     <Filter Include="Containers">
       <UniqueIdentifier>{bf2195f7-a28c-4854-9252-38f1566e2ed3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Containers\Vector">
-      <UniqueIdentifier>{5d269d15-cfdf-46b6-a344-d01469983d41}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Scene">
       <UniqueIdentifier>{f6ee18f4-eaa9-4569-8bab-23e6184523ce}</UniqueIdentifier>
     </Filter>
@@ -53,7 +50,7 @@
     <Filter Include="System\Position">
       <UniqueIdentifier>{7162fe3d-d1b6-4361-b2d2-92e71ffa8cb5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="헤더 파일\소스 파일">
+    <Filter Include="소스 파일">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
@@ -77,9 +74,6 @@
     <ClInclude Include="Title.h">
       <Filter>Scene\Title</Filter>
     </ClInclude>
-    <ClInclude Include="Vector.h">
-      <Filter>Containers\Vector</Filter>
-    </ClInclude>
     <ClInclude Include="InputManager.h">
       <Filter>Manager\InputManager</Filter>
     </ClInclude>
@@ -101,13 +95,16 @@
     <ClInclude Include="Vector2.h">
       <Filter>System\Position</Filter>
     </ClInclude>
+    <ClInclude Include="Vector.h">
+      <Filter>Containers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>헤더 파일\소스 파일</Filter>
+      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="TileGame.cpp">
-      <Filter>헤더 파일\소스 파일</Filter>
+      <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="System.cpp">
       <Filter>System</Filter>

@@ -7,8 +7,8 @@ void InGame::Activate()
 	randomize();
 
 	player = new Player("¡Ú", Vector2(1, 1));
-	enemy = new Enemy("¡Ü", Vector2(5, 5));
-	map = new Map(player, enemy, Vector2(20, 20));
+	enemy = new Enemy("¡Ü", Vector2(3, 3));
+	map = new Map(player, enemy, Vector2(5, 5));
 
 	turn = PlayerTurn;
 }
@@ -42,6 +42,12 @@ void InGame::Render()
 		for (int j = 0; j < map->vSize.x * 2; j += 2)
 			g_system->WriteText(j, i, map->map[i][z++].c_str());
 	}
+	map->min = map->vSize.x * map->vSize.y;
+	map->WayFinding(enemy->pos.x, enemy->pos.y, 1);
+	g_system->WriteText(30, 30, to_string(map->min - 1).c_str());
+	g_system->WriteText(40, 10, to_string(map->path.back().x).c_str());
+	g_system->WriteText(50, 10, to_string(map->path.back().y).c_str());
+	
 }
 
 void InGame::Deactivate()

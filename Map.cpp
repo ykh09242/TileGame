@@ -3,14 +3,17 @@
 
 
 Map::Map(Player* player, Enemy* enemy, Vector2 size)
-	: vSize(size)
+	: vSize(size), player(player)
 {
-	map = new string*[size.y];
+	map = new string*[vSize.y];
+	visit = new TileState*[vSize.y];
 
-
-	for (int i = 0; i < size.y; ++i)
+	for (int i = 0; i < vSize.y; ++i)
 	{
-		map[i] = new string[size.x];
+		map[i] = new string[vSize.x];
+		visit[i] = new TileState[vSize.x];
+
+		memset(visit[i], Open, sizeof(TileState) * vSize.x);
 	}
 
 	for (int i = 0; i < vSize.y; i++)
@@ -19,18 +22,27 @@ Map::Map(Player* player, Enemy* enemy, Vector2 size)
 		{
 			int r = random(100);
 
-			if (r < 15)
-				map[i][j] = "бс";
-			else
+			//if (r < 15)
+			//{
+			//	map[i][j] = "бс";
+			//	visit[i][j] = Close;
+			//}
+			//else
 				map[i][j] = "бр";
 		}
 	}
 
-	WayFinding(player, enemy);
+	min = vSize.x * vSize.y;
 }
 
 Map::~Map()
 {
+	for (int i = 0; i < vSize.y; ++i)
+	{
+		SAFE_DELETE_ARRAY(visit[i]);
+	}
+	SAFE_DELETE_ARRAY(visit);
+
 	for (int i = 0; i < vSize.y; ++i)
 	{
 		SAFE_DELETE_ARRAY(map[i]);
@@ -38,111 +50,41 @@ Map::~Map()
 	SAFE_DELETE_ARRAY(map);
 }
 
-void Map::WayFinding(Player* player, Enemy* enemy)
+void Map::WayFinding(int x, int y, int l)
 {
-	int cnt = 1;
-	int** cost;
-	bool** visit;
-
-	visit = new bool*[vSize.y];
-	cost = new int*[vSize.y];
-
-	for (int i = 0; i < vSize.y; ++i)
+	if (x == player->pos.x && y == player->pos.y)
 	{
-		visit[i] = new bool[vSize.x];
-		cost[i] = new int[vSize.x];
-
-		memset(visit[i], false, sizeof(bool) * vSize.x);
-		memset(cost[i], 0, sizeof(int) * vSize.x);
+		if (min > l) min = l;
+		return;
 	}
 
-	for (int i = 0; i < vSize.y; ++i)
+	visit[y][x] = Close;
+
+	if (!isOver(x, y - 1) && map[y - 1][x] != "бс" && visit[y - 1][x] != Close)
 	{
-		for (int j = 0; j < vSize.x; ++j)
-		{
-			if (map[i][j] == "бс")
-			{
-				visit[i][j] = true;
-			}
-		}
+		path.push_back(Vector2(x, y - 1));
+		WayFinding(x, y - 1, l + 1);
+	}
+	if (!isOver(x, y + 1) && map[y + 1][x] != "бс" && visit[y + 1][x] != Close)
+	{
+		path.push_back(Vector2(x, y + 1));
+		WayFinding(x, y + 1, l + 1);
+	}
+	if (!isOver(x - 1, y) && map[y][x - 1] != "бс" && visit[y][x - 1] != Close)
+	{
+		path.push_back(Vector2(x - 1, y));
+		WayFinding(x - 1, y, l + 1);
+	}
+	if (!isOver(x + 1, y) && map[y][x + 1] != "бс" && visit[y][x + 1] != Close)
+	{
+		path.push_back(Vector2(x + 1, y));
+		WayFinding(x + 1, y, l + 1);
 	}
 
-	cost[enemy->pos.y][enemy->pos.x] = 0;
-	visit[enemy->pos.y][enemy->pos.x] = true;
-
-	for (int i = enemy->pos.y; i < vSize.y; ++i)
-	{
-		for (int j = enemy->pos.x; j < vSize.x; ++j)
-		{
-			int count = cnt;
-			for (int y = -1; y < 2; ++y)
-			{
-				for (int x = -1; x < 2; ++x)
-				{
-					if (y == 0 && x == 0)
-						continue;
-
-					if (x != 0 || y != 0)
-						count += 2;
-					else
-						count += 1;
-
-					if (!isOver(j + x, i + y) && visit[i + y][j + x] == false)
-					{
-						cost[i + y][j + x] = cnt;
-						visit[i + y][j + x] = true;
-					}
-
-					count = cnt;
-				}
-			}
-		}
-	}
-
-	for (int i = enemy->pos.y; i >= 0; --i)
-	{
-		for (int j = enemy->pos.x; j >= 0; --j)
-		{
-			int count = cnt;
-			for (int y = -1; y < 2; ++y)
-			{
-				for (int x = -1; x < 2; ++x)
-				{
-					if (y == 0 && x == 0)
-						continue;
-
-					if (x != 0 || y != 0)
-						count += 2;
-					else
-						count += 1;
-
-					if (!isOver(j + x, i + y) && visit[i + y][j + x] == false)
-					{
-						cost[i + y][j + x] = cnt;
-						visit[i + y][j + x] = true;
-					}
-
-					count = cnt;
-				}
-			}
-			cnt += 2;
-		}
-	}
-
-	for (int i = 0; i < vSize.y; ++i)
-	{
-		for (int j = 0; j < vSize.x; ++j)
-		{
-			if (visit[i][j] == true)
-			{
-				int a;
-			}
-			else
-			{
-				int b;
-			}
-		}
-	}
+	visit[y][x] = Open;
+	if (path.back().x != player->pos.x && path.back().y != player->pos.y)
+		path.pop_back();
+	return;
 }
 
 bool Map::isOver(int x, int y)
