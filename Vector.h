@@ -29,6 +29,11 @@ public:
 		return !nSize;
 	}
 
+	void assign(const size_t _NewSize, const T &_Val)
+	{
+		for (int i = 0; i < _NewSize; ++i)
+			vc[i] = _Val;
+	}
 	void resize(int size)
 	{
 		nCapacity = size;

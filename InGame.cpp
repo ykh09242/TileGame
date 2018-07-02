@@ -5,10 +5,10 @@
 void InGame::Activate()
 {
 	randomize();
-	map = new Map(Vector2(20, 20));
 
 	player = new Player("¡Ú", Vector2(1, 1));
 	enemy = new Enemy("¡Ü", Vector2(5, 5));
+	map = new Map(player, enemy, Vector2(20, 20));
 
 	turn = PlayerTurn;
 }
