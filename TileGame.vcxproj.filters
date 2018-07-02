@@ -42,6 +42,21 @@
     <Filter Include="Scene\InGame">
       <UniqueIdentifier>{44240971-efc4-42ec-bbbb-73048e15f359}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Character">
+      <UniqueIdentifier>{25ae1517-fb3b-4517-a6a1-2e1108a7241c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Player">
+      <UniqueIdentifier>{1584457d-b20c-4f86-9c4e-6ad84074d130}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Character\Enemy">
+      <UniqueIdentifier>{ede366af-a184-4483-92d3-93f00343cc7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\InGame\Map">
+      <UniqueIdentifier>{33bc7ae6-ad42-4b31-b619-2d0ae8356c25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Position">
+      <UniqueIdentifier>{7162fe3d-d1b6-4361-b2d2-92e71ffa8cb5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -74,6 +89,18 @@
     <ClInclude Include="BaseScene.h">
       <Filter>Scene</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Character\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Character\Enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Scene\InGame\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>System\Position</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -96,6 +123,18 @@
     </ClCompile>
     <ClCompile Include="InGame.cpp">
       <Filter>Scene\InGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Character\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Character\Enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Scene\InGame\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>System\Position</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

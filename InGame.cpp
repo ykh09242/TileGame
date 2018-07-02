@@ -4,28 +4,13 @@
 
 void InGame::Activate()
 {
-	string temp[10][10] =
-	{
-		{ "бр", "бр", "бр", "бр" , "бр" ,"бр" ,"бр" ,"бр" , "бр", "бр" },
-		{ "бр", "бр", "бр", "бр" , "бр" ,"бр" ,"бр" ,"бр" , "бр", "бр" },
-		{ "бр", "бр", "бр", "бр" , "бр" ,"бр" ,"бр" ,"бр" , "бр", "бр" },
-		{ "бр", "бр", "бр", "бр" , "бр" ,"бр" ,"бр" ,"бр" , "бр", "бр" },
-		{ "бр", "бр", "бр", "бр" , "бр" ,"бр" ,"бр" ,"бр" , "бр", "бр" },
-		{ "бр", "бр", "бр", "бр" , "бр" ,"бр" ,"бр" ,"бр" , "бр", "бр" },
-		{ "бр", "бр", "бр", "бр" , "бр" ,"бр" ,"бр" ,"бр" , "бр", "бр" },
-		{ "бр", "бр", "бр", "бр" , "бр" ,"бр" ,"бр" ,"бр" , "бр", "бр" },
-		{ "бр", "бр", "бр", "бр" , "бр" ,"бр" ,"бр" ,"бр" , "бр", "бр" },
-		{ "бр", "бр", "бр", "бр" , "бр" ,"бр" ,"бр" ,"бр" , "бр", "бр" }
-	};
-	map = new Map();
-	for (int i = 0; i < 10; i++)
-		for (int j = 0; j < 10; j++)
-			map->map[i][j] = temp[i][j];
+	randomize();
+	map = new Map(Vector2(20, 20));
 
-	player = new Player("бс", Vector2(1, 1));
+	player = new Player("б┌", Vector2(1, 1));
 	enemy = new Enemy("б▄", Vector2(5, 5));
 
-	
+	turn = PlayerTurn;
 }
 
 void InGame::Update()
@@ -35,21 +20,28 @@ void InGame::Update()
 		g_scene->Activate(sTitle);
 		return;
 	}
+
+	switch (turn)
+	{
+	case PlayerTurn:
+		player->Moving(map);
+		break;
+	case EnemyTurn:
+		break;
+	}
 }
 
 void InGame::Render()
 {
-	map->map[player->pos.x][player->pos.y] = player->shape;
-	map->map[enemy->pos.x][enemy->pos.y] = enemy->shape;
+	map->map[player->pos.y][player->pos.x] = player->shape;
+	map->map[enemy->pos.y][enemy->pos.x] = enemy->shape;
 
-	for (int i = 0; i < 10; ++i)
+	for (int i = 0; i < map->vSize.y; ++i)
 	{
 		int z = 0;
-		for (int j = 0; j < 20; j += 2)
-			g_system->WriteText(j + 30, i + 8, map->map[i][z++].c_str());
+		for (int j = 0; j < map->vSize.x * 2; j += 2)
+			g_system->WriteText(j, i, map->map[i][z++].c_str());
 	}
-
-	
 }
 
 void InGame::Deactivate()

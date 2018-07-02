@@ -1,5 +1,6 @@
 #pragma once
 
+
 class System
 	: public Singleton<System>
 {
