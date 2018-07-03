@@ -10,6 +10,10 @@ private:
 	Player* player;
 	Enemy* enemy;
 
+	int randX;
+	int randY;
+	int r;
+
 public:
 	virtual void Activate() override;
 	virtual void Update() override;

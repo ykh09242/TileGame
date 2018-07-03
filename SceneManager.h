@@ -9,7 +9,7 @@ public:
 
 private:
 	BaseScene* activateScene;
-	Vector<BaseScene*> sceneArray;
+	vector<BaseScene*> sceneArray;
 
 public:
 	void Update();
